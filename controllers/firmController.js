@@ -42,7 +42,6 @@ const addFirm = async (req, res) => {
 const deleteFirmById = async (req, res) => {
   try {
     const firmId = req.params.firmId;
-    // await Firm.updateOne({ $pull: { products: firmId } });
     const products = await Product.deleteMany({ firm: firmId });
     await Vendor.updateOne({ $pull: { firm: firmId } });
 
