@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 
 const vendorRoutes = require("./routes/vendorRoutes");
 const firmRoutes = require("./routes/firmRoutes");
@@ -11,6 +12,7 @@ const app = express();
 
 dotenv.config();
 app.use(bodyParser.json());
+app.use(cors());
 
 mongoose
   .connect(process.env.MONGO_URI)
