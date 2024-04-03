@@ -12,6 +12,7 @@ const app = express();
 
 dotenv.config();
 app.use(bodyParser.json());
+app.use(express.json());
 app.use(cors());
 
 mongoose
